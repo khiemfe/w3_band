@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3_Band</title>
+    <link rel="icon" href="/assets/img/messi-icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<body>
+    <!-- BEGIN -->
+    <div id="main">
+        <!-- BEGIN header -->
+        <div id="header">
+            <!-- begin: nav -->
+            <!-- ul#nav>li*5>a -->
+            <ul id="nav">
+                <!-- đặt dấu # để nó nhảy tới nơi muốn nhảy, vì # là id ta đã đặt ở bên dưới
+                , còn về home thì ta đặt 1 dấu # -->
+                <li><a href="#">Home</a></li>
+                <li><a href="#band">Band</a></li>
+                <li><a href="#tour">Tour</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="#">
+                        More 
+                        <!-- icon -->
+                        <i class="nav-arrow-dow ti-angle-down"></i>
+                    </a>
+                    <ul class="subnav">
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Extras</a></li>
+                        <li><a href="#">Media</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- end: nav -->
+            
+            <!-- mobile menu -->
+            <div id="mobile-menu" class="mobile-menu-btn">
+                <i class="menu-icon ti-menu"></i>
+            </div>
+
+            <!-- begin: search button -->
+            <div class="search-btn">
+                <i class="search-icon ti-search"></i>
+            </div>
+            <!-- end: search button -->
+            
+        </div>
+        <!-- End Header -->
+
+        <div id="slider">
+            <div class="text-content">
+                <h2 class="text-heading">Chicago</h2>
+                <div class="text-description">Thank you, Chicago - A night we won't forget.</div>
+            </div>
+        </div>
+
+        <!-- Begin content -->
+        <div id="content">
+            <div id="band" class="content-section">
+                <h2 class="section-heading">THE BAND</h2>
+                <p class="section-sub-heading">We Love Music</p>
+                <p class="about-text">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            
+                <div class="row members-list">
+
+                    <!-- nhiệm vụ của member-item bây giờ là dùng để căn giữa, ta có thể thay thế member-item = text-center -->
+                    <div class="col col-third s-col-full mt-32 text-center">
+                        <p class="member-name">Name</p>
+                        <img src="/assets/img/band/member1.jpg" alt="" class="member-img">
+                    </div>
+                    <!-- thêm mt-32 vào để cộng vs 32px ở #content .members-list để khoảng cách dù trên pc hay mobile là 48px, 
+                        và khi trên mobile thì mỗi ảnh tự động cách nhau 16px-->
+                    <div class="col col-third s-col-full mt-32 text-center">
+                        <p class="member-name">Name</p>
+                        <img src="/assets/img/band/member1.jpg" alt="" class="member-img">
+                    </div>
+
+                    <div class="col col-third s-col-full mt-32 text-center">
+                        <p class="member-name">Name</p>
+                        <img src="/assets/img/band/member1.jpg" alt="" class="member-img">
+                    </div>
+                    <!-- hủy bỏ float để không bị thu hẹp list -->
+                    <!-- <div class="clear"></div>  -->
+                </div>
+            </div>
+            
+
+            <!-- begin tour -->
+            <div id="tour" class="tour-section">
+                <div class="content-section">
+                    <h2 class="section-heading text-white">TOUR DATES</h2>
+                    <p class="section-sub-heading text-white">Remember to book your tickets!</p>
+
+                    <ul class="tickets-list">
+                        <li>September <span class="sold-out">Sold-out</span></li>
+                        <li>October <span class="sold-out">Sold-out</span></li>
+                        <li>Novemver <span class="quantily">3</span></li>
+                    </ul>
+
+                    <div class="row places-list">
+                        <!-- chỉnh .place-list mrgin top từ 32 thành 16px, để thêm vô mỗi ảnh cách 16px, thì nó trên pc vẫn là 32
+                        , và khi trên mobile mỗi ảnh tự cách nhau 16px -->
+                        <div class="col col-third s-col-full mt-16">
+                            <img src="/assets/img/tickets/tickets1.jpg" alt="New York" class="place-img">
+                            <div class="place-body">
+                                <h3 class="place-heading">New York</h3>
+                                <p class="place-time">Fri 27 Nov 2016</p>
+                                <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                                <!-- <a href="#" class="place-buy-btn">Buy Tickets</a> -->
+                                <!-- dùng button thay thẻ a để kick vào nó không bị trôi lên -->
+
+                                <!-- dùng s-full-width để nút buy tickets dài ra hơn trên mobile -->
+                                <button class="btn js-buy-tickets s-full-width">Buy Tickets</button>
+                            </div>
+                        </div>
+                        <!-- size s là mobile thì mỗi cột sẽ là 100% để chia ra thành 3 hàng -->
+                        <div class="col col-third s-col-full mt-16">
+                            <img src="/assets/img/tickets/tickets2.jpg" alt="New York" class="place-img">
+                            <div class="place-body">
+                                <h3 class="place-heading">Paris</h3>
+                                <p class="place-time">Sat 28 Nov 2016</p>
+                                <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                                <!-- <a href="#" class="place-buy-btn">Buy Tickets</a> -->
+                                <!-- dùng button thay thẻ a để kick vào nó không bị trôi lên -->
+                                <button class="btn js-buy-tickets s-full-width">Buy Tickets</button>
+                            </div>
+                        </div>
+
+                        <div class="col col-third s-col-full mt-16">
+                            <img src="/assets/img/tickets/tickets3.jpg" alt="New York" class="place-img">
+                            <div class="place-body">
+                                <h3 class="place-heading">San Francisco</h3>
+                                <p class="place-time">Sun 29 Nov 2016</p>
+                                <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                                <!-- <a href="#" class="place-buy-btn">Buy Tickets</a> -->
+                                <!-- dùng button thay thẻ a để kick vào nó không bị trôi lên -->
+                                <button class="btn js-buy-tickets s-full-width">Buy Tickets</button>
+                            </div>
+                        </div>
+                        <!-- <div class="clear"></div>  -->
+                    </div>
+                    
+                </div>
+                
+
+            </div>
+            <!-- end tour -->
+
+
+            <!-- begin: contact section -->
+            <div id="contact" class="content-section">
+                <h2 class="section-heading">CONTACT</h2>
+                <p class="section-sub-heading">Fan? Drop a note!</p>
+
+                <div class="row contact-content">
+                    <div class="col col-half s-col-full contact-info">
+                        <p><i class="ti-location-pin"></i>Chicago, US</p>
+                                                            <!-- href="tel:+00 151515" bấm vào để gọi luôn -->
+                        <p><i class="ti-mobile"></i>Phone: <a href="tel:+00 151515">+00 151515</a></p>
+                        <p><i class="ti-email"></i>Email: <a href="mailto:mail@mail.com">mail@mail.com</a></p>
+                    </div>
+                    <div class="col col-half s-col-full contact-form">
+                        <form action="">
+                            <div class="row">
+                                <div class="col col-half s-col-full">
+                                    <!-- sử dụng required để khi ta chưa nhập gì vào input (hoặc type là email mà nhập ko 
+                                    phải là 1 email) mà bấm xem nó sẽ hiện lỗi ngay dưới input -->
+                                    <input type="text" name="" placeholder="Name" id="" required class="form-control">
+                                </div>
+                                <!-- thêm s-mt-8 để tạo khoảng cách giữa nút name và email -->
+                                <div class="col col-half s-col-full s-mt-8">
+                                    <input type="email" name="" placeholder="Email" id="" required class="form-control">
+                                </div>
+                                <!-- <div class="clear"></div> -->
+                            </div>
+                            <div class="row mt-8">
+                                <div class="col col-full">
+                                    <input type="text" name="" placeholder="Message" id="" required class="form-control">
+                                </div>
+                            </div>
+                            <!-- thêm s-full-width để làm dài nút SEND trên mobile, và thẻ input type=submit mặc định đã căn giữa rồi nên ko cần căn bên css, nhưng thêm cũng ko sao -->
+                            <input class="submit-btn-iphone btn pull-right mt-16 s-full-width" type="submit" value="SEND">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- end: contact section -->
+
+            <div class="map-section">
+                <img src="/assets/img/map.jpg" alt="Map">
+            </div>
+        </div>
+        <!-- End content -->
+
+        <div id="footer">
+            <div class="social-list">
+                <a href=""><i class="ti-facebook"></i></a>
+                <a href=""><i class="ti-instagram"></i></a>
+                <a href=""><i class="ti-youtube"></i></a>
+                <a href=""><i class="ti-pinterest"></i></a>
+                <a href=""><i class="ti-twitter"></i></a>
+                <a href=""><i class="ti-linkedin"></i></a>
+            </div>
+            <p class="copyright">Powered by <a href="">w3.css</a></p>
+        </div>
+
+    </div>
+    <!-- END -->
+
+    <!-- Begin Modal -->
+    <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
+            <div class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+            </div>
+            <!-- header tương tự như div -->
+            <header class="modal-header">
+                <i class="modal-heading-icon ti-bag"></i>
+                Tickets
+            </header>
+
+            <div class="modal-body">
+            <!-- label tương tự như div -->
+                <!-- for là khi bấm vào chữ Tickets, $15 per person thì nó vẫn hiện con chuột trong input -->
+                <!-- for chỉ dùng được id -->
+                <label for="ticket-quantity" class="modal-label">
+                    <i class="ti-shopping-cart"></i>
+                    Tickets, $15 per person
+                </label>
+                <input id="ticket-quantity" type="text" class="modal-input" placeholder="How many">
+
+                <label for="ticket-email" class="modal-label">
+                    <i class="ti-user"></i>
+                    Send To
+                </label>
+                <input id="ticket-email" type="text" class="modal-input" placeholder="Enter email">
+
+                <button id="buy-tickets">
+                    Pay <i class="ti-check"></i>
+                </button>
+            </div>
+            <!-- footer tương tự như div -->
+            <footer class="modal-footer">
+                <p class="modal-helpp">Need <a href="">help?</a></p>
+            </footer>
+        </div>
+    </div>
+    <!-- End Modal -->
+
+    <!-- Begin JS -->
+    <script>
+        // gán 3 nút buy tickets = buyBtns
+        const buyBtns = document.querySelectorAll('.js-buy-tickets')
+
+        const modal = document.querySelector('.js-modal')
+
+        const modalContainer = document.querySelector('.js-modal-container')
+
+        const modalClose = document.querySelector('.js-modal-close')
+
+        // hàm add open bên cạnh modal
+        function showBuyTickets(){
+            // click vào buyBtn thì sẽ hiện ra hộp thoại (khung) SHOW
+            // alert("SHOW")
+            // thêm open vào class: modal để khi click chuột vào buy tickets sẽ hiện khung lên
+            modal.classList.add('open')
+
+        }
+        // đặt hàm xóa open bên cạnh modal
+        function removeBuyTickets(){
+            modal.classList.remove('open')
+            // không dùng đc:
+            // modalClose.classList.remove('open')
+        }
+
+        // for chạy từ nút 0 đến 2
+        for(const buyBtn of buyBtns) {
+            // lắng nghe nút click, khi click vào buyBtn thì sẽ mở ra hàm showBuyTickets
+            buyBtn.addEventListener('click', showBuyTickets)
+        }
+        
+        // xóa open khi click vào dấu X, đồng nghĩa với việc tắt khung
+        // modalClose là khi click vào dấu X thì mới đóng khung
+        modalClose.addEventListener('click', removeBuyTickets)
+
+        // còn dùng modal thì click vào dấu X hay bên ngoài khung thì khung vẫn sẽ đóng
+        modal.addEventListener('click', removeBuyTickets)
+
+        // tạo ra để khi click vào khung nó sẽ khung bị đóng
+        // mỗi lần click vào hành vi diễn ra thì nó luôn trả lại một event, từ event này có thể giúp ta ngăn chặn hành vi mặc định
+        modalContainer.addEventListener('click', function (event) {
+            // ngừng hành vi nổi bột lại, để click vào khung ko bị đóng
+            event.stopPropagation()
+        })
+
+
+        // mobile
+        var header = document.getElementById('header');
+        // console.log(header);
+        var mobileMenu = document.getElementById('mobile-menu')
+        // console.log(mobileMenu);
+
+        // đóng mở menu mobile
+        mobileMenu.onclick = function(){
+            // alert("thong bao")
+            // console.log(header.clientHeight);
+
+            // = là gán, === là so sánh
+            // 46 chính là height của header
+            var isClosed = header.clientHeight === 46;
+            // đặt headerHeight = giá trị height của header để khi thay đổi giá trị height ta ko cần phải thay đổi bên này, nếu ko sẽ bị lỗi
+            var headerHeight = header.clientHeight;
+
+            // nếu đang đóng bấm vào thì chuyển height qua auto (thích ứng với từng loại chiều cao)
+            if (isClosed){
+            var isClosed = header.clientHeight === headerHeight;
+                header.style.height = 'auto';
+            } 
+            // còn nếu nó ko phải đang đóng (nó đang mở) thì bấm vào nó sẽ trở về 46px, là trở về mặc định của nó
+            else {
+                header.style.height = '46px'; //or null
+            }
+        }
+
+        // tự động đóng khi chọn menu
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+
+        // console.log(menuItems)
+        for (var i = 0; i < menuItems.length; i++){
+            var menuItem = menuItems[i];
+            // console.log(menuItem)
+
+            // vị trí tiếp theo của menuItem(thẻ a), anh chị e liền kề
+            // console.log(menuItem.nextElementSibling)
+
+            menuItem.onclick = function(){
+                // console.log(this), this là chính nó (menuItem)
+                // nếu mà có anh chị em liền kề và anh chị e liền kề đó chứa class là subnav thì biết được isParenMenu là menu cha
+                var isParenMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+                
+                if(!isParenMenu){
+                    // nếu nó không phải thì bấm nó sẽ trở về mặc định, còn phải thì nó giữ nguyên
+                    header.style.height = null;
+                } else{
+                    // bỏ qua mặc định, là khi đang ở dưới quần band hay tour thì ta bấm more thì nó sẽ không bị kéo lên trên
+                    event.preventDefault();
+                }
+            }
+        }
+        fetch(url, {
+            method: "get",
+            headers: new Headers({
+                "ngrok-skip-browser-warning": "5500",
+            }),
+        })
+            .then((response) => response.json())
+            .then((data) => console.log(data))
+            .catch((err) => console.log(err)
+            );
+    </script>
+    <!-- End JS -->
+
+</body>
+</html>

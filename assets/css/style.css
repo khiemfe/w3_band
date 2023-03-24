@@ -1,0 +1,827 @@
+/* Reset CSS */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* html dieu chinh len chu */
+html{
+    /* bấm vào band,tour... nó chạy xuống band từ từ mà đẹp hơn */
+    scroll-behavior: smooth;
+
+    /* dieu chu font chu, bo chan chu */
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* 
+1. Làm từ ngoài vào trong 
+2. Làm từ trên xuống dưới
+3. Tổng quan đến chitiết
+*/
+
+/* 
+1. Vị trí
+2. Kích thước (width, height)
+3. Màu sắc
+4. Kiểu dáng (kiểu chữ, hình tròn, vuông,...)
+*/
+
+
+    /* Hủy bỏ float để không bị thu hẹp lại, thay thế cho overflow:hidden  */
+.clear{
+    clear: both;
+}
+
+.text-center{
+    text-align: center !important;
+}
+
+/* uu tien mau trang */
+.text-white{
+    color: #fff !important;
+}
+
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.col{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+/* tự động thêm vào cuối mỗi row (hàng), không cần phải đặt clear bên html */
+.row::after{
+    content: "";
+    /* có display:block mới clear:both được */
+    display: block;
+    clear: both;    
+}
+
+.col-full{
+    width: 100%;
+}
+
+/* tạo col 2 cột */
+.col-half{
+    width: 50%;
+}
+
+/* thay thế luôn place-item để gọn css (col 3 cột)*/
+.col-third{
+    width: 33.33333%;
+}
+
+.mt-8{
+    margin-top: 8px !important;
+}
+
+.mt-16{
+    margin-top: 16px !important;
+}
+
+.mt-32{
+    margin-top: 32px !important;
+}
+
+.btn{
+    color: #fff;
+    background-color: #000;
+    /* bỏ gạch chân */
+    text-decoration: none;
+    /* kéo rộng ô màu đen */
+    padding: 11px 16px;
+    /* dùng inline-block để khỏi đè lên chữ phía trên */
+    display: inline-block;
+    /* thụt xuống dưới */
+    margin-top: 15px;
+    /* ngón tay */
+    cursor: pointer;
+    /* viền */
+    border: 2px solid black;
+    /* căn giữa khi thanh nút bấm dài ra ở chế độ mobile */
+    text-align: center;
+
+    /* bỏ đi style mặc định của nó (áp dụng trên trình duyệt bình thường) */
+    /* appearance: none; */
+    /* bỏ đi style mặc định của nó (áp dụng trên safari (iphone))
+    để khi lướt trang web trên đth iphone nút SEND sẽ ko bị lỗi */
+    --webkit-appearance: none
+}
+
+.btn:hover{
+    background-color: #ccc;
+    color: black;
+    border: 2px solid #ccc;
+    /* padding: 11px 16px; */
+}
+
+.pull-right{
+    float: right;
+}
+
+/* #main {
+    cách pix những khoảng trắng lộ ra khi chuyển qua ipad, 
+    nhưng nó ko được tối ưu
+    overflow: hidden;  
+} */
+
+#header {
+    height: 46px;
+    background-color: #000;
+    /* giữ cho thanh đen đầu trang ko bị kéo đi khi lướt web */
+    /* khi có thẻ pos này thì tính chất kế thừa của thẻ block ko còn (nav), 
+    và chiều rộng của thanh ngang chỉ còn bằng vs chiều rộng content của nó */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* khắc phục khi kéo trang web thì bức ảnh che mất thanh đen phía trên */
+    /* vì khi bức ảnh dùng thuộc tính pos vào thì đối tượng pos:fixed sẽ 
+    nổi lên hoặc chìm xuống (tách ra khỏi mặc phẳng mặc định) */
+    /* nếu = 1 không được thì ta tăng giá trị lên */
+    z-index: 1;
+
+    /* khi chiều cao của các phần tử con vượt quá  header thì nó sẽ ẩn đi (mobile) */
+    /* overflow: hidden; */
+}
+
+/* thằng nav nó dùng tới đâu thì dừng ở đó, dùng tới More 
+thì dừng ở More chứ không chiếm hết thanh đen */
+#nav{
+    display: inline-block;
+}
+
+#nav, .subnav{
+    /* xoa 3 dau cham truoc the li */
+    list-style-type: none;
+}
+    
+/* chuyen display: inline-block; ra day de cho con cua More khi
+ chua chuot vao no se day ra va chinh thanh hang ngang */
+#nav > li{
+    display: inline-block;
+}
+#nav li{
+    /* thanh hang ngang */
+    /* display: inline-block; */
+
+    position: relative;
+
+}
+/* cho chữ thẻ con của li không bị ảnh hưởng bởi màu trắng */
+#nav > li > a {
+    color: #fff;
+    /* in hoa */
+    text-transform: uppercase;
+    font-size: 16px;
+}
+#nav li a{
+    /* bỏ gạch chân */
+    text-decoration: none;
+    /* căn giữa chiều cao cho chữ */
+    line-height: 46px;
+    /* căn cho khoảng cách các chữ rộng ra bằng nhau */
+    padding: 0 24px;
+
+    /* khi đưa chuột vào màu trắng sẽ rộng hơn */
+    /* display: inline-block; */
+    /* hoac display:block */
+
+    /* dùng block vì khi qua chế độ mobile mới kick được thanh 
+    ngang của nút band, tour,...
+    không cần phải bấm vô chữ mới đc  */
+    display: block;
+}
+
+/* đưa chuột vào thì sẽ hiện con của nó ra */
+/* đè display: none của #nav .subnav */
+#nav li:hover .subnav{
+    display: block;
+}
+/* tach ra de no khong bi anh huong tat ca */
+#nav > li:hover > a{
+    color: #000;
+    background-color: #ccc;
+
+}
+
+#nav .subnav{
+    /* ẩn */
+    display: none;
+    /* thanh traang dai ra */
+    position: absolute;
+    /* dai thanh con ra */
+    min-width: 160px;
+    /* để nó chắc chắn cách more chuẩn */
+    top: 100%;
+
+    background-color: #fff;
+    /* bóng đổ trên nền trắng */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* chỉnh màu chữ và kích cỡ con của More */
+#nav .subnav a {
+    color: #000;
+    padding: 0 12px;
+    line-height: 38px;
+} 
+
+/* đưa chuột vào phần con của More thì nó sẽ hiện khung lên */
+#nav .subnav li:hover{
+    color: yellow;
+    background-color: #ccc;
+}
+
+/* dieu chinh icon more*/
+#nav .nav-arrow-dow{
+    font-size: 10px;
+}
+
+/* icon menu tren mobile */
+#header .mobile-menu-btn{
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 0;
+    /* ẩn nó đi để khi chế độ pc nó không hiện ra, gắn vào chỉ hiện bên mobile */
+    display: none;
+}
+
+#header .mobile-menu-btn:hover{
+    /* cursor: pointer; */
+    background-color: #ccc;
+}
+
+/* khi ta hover vào nút menu thì chạy lại menu-icon để icon hiện màu đen */
+#header .mobile-menu-btn:hover .menu-icon{
+    color: #000;
+}
+
+#header .menu-icon{
+    color: #fff;
+    font-size: 20px;
+    line-height: 46px;
+    padding: 0 21px;
+}
+
+/* khi dùng thẻ div thì dấu search cùng chiếm hết chiều ngang
+ nên không thể chui lên trên được */
+/* ta dùng float để nó không còn chiếm hết và đẩy nó lên trên bên phải */
+#header .search-btn{
+    float: right;
+
+/* thay đổi con chuột khi đưa nào nút bấm search */
+/* pointer là hình ngón tay */
+/* có thể xem nhiều dạng cursor trên w3school */
+/* khi không có search-btn:hover thì để ở đây vẫn được */
+    /* cursor: pointer; */
+}
+
+/* hover: đưa chuột vào hiện màu lên */
+#header .search-btn:hover{
+    cursor: pointer;
+    background-color: red;
+}
+
+/* dieu chinh icon search */
+#header .search-icon{
+    color: #fff;
+    font-size: 20px;
+    /* điều chỉnh dấu search cho ra giữa và to lên */
+    line-height: 46px;
+    padding: 0 21px;
+}
+
+#slider {
+    position: relative;
+    /* đẩy phần slider xuống dưới để thanh ngang đen của phần header không bị đè lên */
+    margin-top: 46px;
+    /* 50% la % chieu ngang cua chinh no */
+    /* % khac px... */
+    padding-top: 50% ;  
+    /* backgourn image - background pos - background size - back ground repeat */
+    /* .. thay cho assets, dấu .. là để cho style.css nhảy ra ngang bằng vs file
+    css đồng thời ngang luôn với file img rồi nó tìm ảnh trong img, để khi
+    ta cho assets vào trong một thư mục khác thì web sẽ bị lỗi hoặc không
+    tìm tới đc ảnh và ảnh sẽ bị lỗi */
+    background: url('../img/slider/slider1.jpg') top center / cover no-repeat
+}
+
+#slider .text-content{
+    /* chuyển lên tầng padding theo thằng slider */
+    position: absolute;
+    /* chỉnh content */
+    bottom: 47px;
+    color: #fff;
+    /* chuyen qua 50% de thanh o giua */
+    left: 50%;
+    /* can dong duoi vao giua chuan xac hon */
+    transform: translateX(-50%);
+    /* chu dong tren vao giua */
+    text-align: center;
+
+    /* cach can giua 2 (nen dung vi don gian)*/
+    /* width: 100%; */
+    /* text-align: center; */
+
+    /* cach 3 */
+    /* right: 0;
+    left: 0;
+    text-align: center; */
+}
+
+#slider .text-heading{
+    font-size: 24px;
+    /* giảm độ dày của chữ */
+    font-weight: 600;
+
+    /* tao khoang cach giua 2 dong */
+    /* margin-bottom: 25px; */
+}
+
+#slider .text-description{
+    font-size: 15px;
+    /* tao khoang cach giua 2 dong */
+    margin-top: 25px;
+
+    text-shadow: 0 0 1px #000;
+}
+
+/* #content {
+    
+} */
+
+#content .content-section{
+    /* kich thuoc cua khung conten-section */
+    width: 800px;
+    /* làm nhỏ khoảng hở của content-section khi dùng ipad (tablet) */
+    max-width: 100%;
+    /* tao khoang cach vs khung tren */
+    /* trên: 64, trái phải: 0, dưới: 112 (khung den duoi tour)*/
+    padding: 64px 0 112px;
+    /* can giua */
+    margin-left: auto;
+    margin-right: auto;
+
+    /* pix lỗi khi chuyển qua dùng ipad, vì ở bên pc ta dùng row mảgin left & right là -8 px
+    nên ta phải padding lại cho vừa màn hình ipad, tăng lên 16px để căn
+     cho đẹp đoạn văn bên dưới và những phần dưới nữa */
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+#content .section-heading{
+    font-size: 30px;
+    /* can giua */
+    text-align: center;
+    /* mỏng cỡ chữ */
+    font-weight: 500;
+    /* tạo khoảng cách giữa các chữ cái */
+    letter-spacing: 4px;
+}
+
+#content .section-sub-heading{
+    font-size: 15px;
+    text-align: center;
+    /* khoảng cách dòng */
+    margin-top: 25px;
+    /* in nghieng */
+    font-style: italic;
+    /* độ trong suốt (làm mờ chữ) 0->1 */
+    opacity: 0.6;
+}
+
+#content .about-text{
+    margin-top: 25px;
+    font-size: 15px;
+    /* căn đều 2 bên dòng chữ */
+    text-align: justify;
+    /* khoảng cách giữa các dòng chữ (đoạn văn). tiếng việt nên 1.6 */
+    line-height: 1.5;
+}
+
+#content .members-list{
+    /* tao khoang cac giua anh va doan van */
+    /* 48-16=32, vì đã thêm 16 vào class, nhưng bên class ta để 32 để rộng ra hơn 1 tí */
+    margin-top: 32px;
+
+    /* khi item dùng float thì list nó sẽ bị thu hẹp lại, không bao gồm 3 bức ảnh dưới */
+    /* ta dùng overflow:hidden để bao gồm 3 ảnh dưới trở lại */
+    /* và đồng thời tạo ra khoảng cách với phần dưới của 3 bức ảnh (TOUR DATES) */
+    /* overflow: hidden; */
+}
+
+/* #content .member-item{ */
+    /* ---tắt để cuyển vào col và col-third---*/
+
+    /* kéo 3 ảnh lên 1 dòng */
+    /* float: left; */
+    /* mỗi ảnh chiếm 33% để đủ 100%, bằng với đoạn văn */
+    /* width: 33.33333%; */
+
+    /* or */
+    /* width: calc(100%/3); */
+
+    /* chuyển vào thẻ text-center để gọn css */
+    /* can giua ca name and img */
+    /* text-align: center; */
+
+/* } */
+
+#content .member-name{
+    font-size: 15px;
+}
+
+#content .member-img{      
+    width: 154px;
+    /* anh cach name 15px */
+    margin-top: 15px;
+    /* bo góc ảnh */
+    border-radius: 4px;
+}
+
+.tour-section{
+    background-color: #000;
+}
+
+/* làm rộng 3 thẻ li của ul */
+.tour-section li{
+    color: #757575;
+    font-size: 15px;
+    padding: 11px 16px;
+    /* kẻ đường kẻ ngang màu #ddd */
+    border-bottom: 1px solid #ddd;
+}
+
+.tickets-list{
+    background-color: #fff;
+    margin-top: 40px;
+    /* bỏ dấu chấm trước thẻ li */
+    list-style: none;
+}
+
+/* chỉnh chữ sold out */
+.tickets-list .sold-out{
+    background-color: red;
+    color: #fff;
+    padding: 3px 4px;
+    margin-left: 16px;
+}
+
+.tickets-list .quantily{
+    background-color: black;
+    color: #fff;
+    /* sang phai */
+    /* float được hiểu là đang dùng display: block, có float thì mới đặt đc width height*/
+    float: right;
+    /* hoạt động khi có float */
+    width: 24px;
+    height: 24px;
+    /* bo thành hình tròn */
+    border-radius: 50%;
+
+    text-align: center;
+    line-height: 24px;
+    /* chỉnh lại lên giữa, dùng được khi có float */
+    margin-top: -3px;
+}
+
+.places-list{
+    margin-top: 16px;
+    
+    /* tắt để chuyển nó vào row để gọn hơn css */
+    /* gióng cho mép ngoài của 3 bức ảnh bằng vs khung phía trên */
+    /* margin-left: -8px;
+    margin-right: -8px;  */
+
+    /* kéo thanh đen rộng xuống */
+    padding-bottom: 48px;
+
+    /* hoặc dùng 1 dòng này */
+    /* margin: 32px -8px 0 */
+}
+/* .places-item{ */
+    /*--- tắt để chuyển qua col làm gọn css ---*/
+
+    /* chuyen len */
+    /* float: left; */
+
+    /* tắt để chuyển qua col-third */
+    /* width: 33.33333%; */
+
+    /* tắt để chuyển qua col làm gọn css */
+    /* tạo khoảng cách giữa các ảnh */
+    /* padding: 0 8px;  */
+/* } */
+
+.place-img{
+    width: 100%;
+    /* xóa vết đen ngang dưới hình ảnh */
+    display: block;
+
+    /* inline se tro lai nhu cu */
+    /* display: inline; */
+}
+
+/* đưa chuột vào ảnh mờ đi */
+.place-img:hover{
+    opacity: 0.6;
+}
+
+.place-body{
+    background-color: #fff;
+    /* căn lại chữ thụt vào trong */
+    padding: 16px;
+
+    /* khoảng cách giữa các dòng */
+    /* line-height: 2.2; */
+
+    font-size: 15px;
+}
+
+.place-heading{
+    /* thẻ h thì phải cài font riêng */
+    font-size: 15px;
+    /* giảm độ dày chữ */
+    font-weight: 600px;
+
+    /* in đậm */
+    /* font-weight: bold; */
+}
+.place-time{
+    margin-top: 15px;
+    /* mờ chữ */
+    opacity: 0.6;
+}
+
+.place-desc{
+    margin-top: 15px;
+    /* độ rộng chữ */
+    line-height: 1.4;
+}
+
+/* tao modal, kích vào mua vé thì sẽ hiện khung modal lên */
+.modal{
+    /* hiện khung */
+    position: fixed;
+
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    /* lớp phủ mờ */
+    background: rgba(0, 0, 0, 0.4);
+    /* chinh khung vao giua */
+    align-items: center;
+    justify-content: center;
+
+    /* flex: hiện khung ở chính giữa 
+    ko có display:flex thì nó vẫn hiện khung nhưng bị lệch */
+    /* display: flex; */
+
+    /* none: tắt khung */
+    display: none;
+}
+
+/* bật tắt khung modal bằng display: flex; */
+.modal.open{
+    display: flex;
+}
+
+/* khung modal */
+.modal-container{
+    background-color: #fff;
+    width: 900px;
+
+    /* khi thu nhỏ trang web thì khung modal cũng sẽ thu nhỏ theo và không bị 
+    dính vào đường viền và cách viền mỗi bên 16px, tương đương vs 32px */
+    max-width: calc(100% - 32px);
+
+    /* chiều ngang tối thiểu */
+    min-height: 200px;
+    /* cha của dấu X */
+    position: relative;
+
+    /* khung modal chạy từ trên xuống 0.4s*/
+    animation: modalFadeIn ease .4s;
+}
+
+/* chỉnh đầu của khung */
+.modal-header{
+    background: #009688;
+    height: 130px;
+    display: flex;
+    /* can giua doc, ngang*/
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+    color: #fff;
+}
+
+/* chỉnh cho icon và chữ cách ra */
+.modal-heading-icon{
+    margin-right: 16px;
+}
+
+.modal-close{
+    /* con của modal-container (cả khung) */
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    /* căn cho dấu X vô giữa khung hơn 1 tí */
+    padding: 12px;
+    /* tương tự hover (đưa chuột vào là hiện nút bấm) */
+    cursor: pointer;
+    /* làm mờ dấu X */
+    opacity: 0.8;
+}
+
+/* và khi đưa chuột vào sáng dấu X lên */
+.modal-close:hover{
+    opacity: 1;
+    background-color: #ccc;
+    color: #000;
+}
+
+.modal-body{
+    padding: 16px;
+}
+
+.modal-label{
+    font-size: 15px;
+    /* block: mỗi thằng nằm 1 hàng */
+    display: block;
+    /* tạo khoảng cách giữa label và input */
+    margin-bottom: 12px;
+}
+
+.modal-input{
+    /* viền input */
+    border: 1px solid #ccc;
+
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    /* tạo khoảng cách giữa input và label dưới (Send to) */
+    margin-bottom: 24px;
+}
+
+/* chỉnh nút Pay */
+#buy-tickets{
+    background: #009688;
+    /* bỏ viền */
+    border: none;
+
+    color: #fff;
+    width: 100%;
+    font-size: 15px;
+    /* in hoa */
+    text-transform: uppercase;
+    /* to khung nút Pay */
+    padding: 18px;
+    /* nên để màu mặc định rồi đưa chuột vào nó sáng lên nên không cần dùng opacity ở đây */
+    /* opacity: 0.8; */
+}
+
+#buy-tickets:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.modal-footer{
+    padding: 16px;
+    /* chuyển qua bên phải */
+    text-align: right;
+}
+
+.modal-footer a{
+    color: #2196F3;
+}
+
+.contact-content{
+    /* 48-16=32, bù 16 bên class, nhưng muốn rộng hơn thì giữ nguyên 48 */
+    margin-top: 48px;
+}
+
+.contact-info{
+    font-size: 18px;
+    /* đặt khoảng cách các dòng rộng ra */
+    line-height: 1.5;
+}
+
+/* .contact-info p i{} */
+/* or */
+.contact-info i[class*="ti-"] {
+    /* đặt icon cách chữ ra */
+    width: 30px;
+    /* do display đang là inline nên đặt display: inline-block mới cách ra được */
+    display: inline-block;
+}
+
+.contact-info a{
+    /* chỉnh màu của số đth và email, màu chỉnh cũng là màu mặc định của nó */
+    color: #101aef;
+    /* nhạt màu chữ */
+    opacity: 0.8;
+}
+
+.contact-info a:hover{
+    /* đưa chuột vào màu chữ đậm lên lại */
+    opacity: 1;
+}
+
+.contact-form{
+    font-size: 15px;
+}
+
+.contact-form .form-control{
+    width: 100%;
+    /* làm to input */
+    padding: 10px;
+    /* viền */
+    border: 1px solid #ccc;
+    /* bỏ đi viền bên ngoài khi click vào input */
+    /* kiểu dùng giống border */
+    outline: none;
+}
+
+/* .contact-form .form-submit-btn{
+    font-size: 15px;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    to nút
+    padding: 10px 16px;
+    sang phai
+    float: right;
+} */
+
+/* hoặc có thể đặt class là btn để dùng chung những nut giống nhau */
+/* .contact-form .form-submit-btn:hover{
+    background-color: #ccc;
+    color: #000;
+    ngón tay chỉ
+    cursor: pointer;
+} */
+
+.map-section img{   
+    width: 100%;
+}
+
+/* img{
+    width: 100%;
+} */
+
+#footer{
+    /* khoảng cách giữa map và footer */
+    padding: 64px 16px;
+    
+    text-align: center;
+}
+
+#footer .social-list{
+    font-size: 24px;
+}
+
+#footer .social-list a{
+    color: rgba(0, 0, 0, 0.6);
+    /* bỏ gạch chân */
+    text-decoration: none;
+}
+
+#footer .copyright a:hover,
+#footer .social-list a:hover{
+    color: rgba(0, 0, 0, 0.4);
+}
+
+#footer .copyright{
+    margin-top: 15px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+#footer .copyright a{
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* tạo ra khi click vào buy tickets thì khung nó sẽ hiện bằng cách chạy từ trên xuống */
+@keyframes modalFadeIn{
+    /* từ */
+    from {
+        /* lúc ở trên nó mờ */
+        opacity: 0;
+        /* phía trên */
+        transform: translateY(-150px);
+    }
+    /* đến */
+    to{
+        /* xuống giữa thì nó sẽ rõ ra */
+        opacity: 1;
+        /* giữa màn hình */
+        transform: translateY(0);
+    }
+}

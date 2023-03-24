@@ -1,0 +1,165 @@
+/* Dùng em ít bị lỗi khi ở nhiều trình duyệt khác nhau */
+/* PC */
+/* 1024px = 64em */
+@media (min-width: 64em){
+    .pc{
+        display: block;
+    }
+}
+
+/* TABLET */
+/* 740px = 46.25em and 1023px = 63.9375em */
+@media (min-width: 46.25em) and (max-width: 1023px){
+    .tablet{
+        display: block;
+    }
+}
+
+/* TABLET AND MOBILE */
+/* 1023px = 63.9375em (Dùng em ít bị lỗi khi ở nhiều trình duyệt khác nhau) */
+@media (max-width: 63.9375em){
+    .btn{
+        /* rộng nút bấm */
+        padding: 15px 16px;
+    }
+
+    #nav .subnav a{
+        /* rộng ra và giữ nguyên 12px như pc */
+        padding: 5px 12px;
+    }
+
+    .contact-form 
+    .form-control{
+        /* rộng nút input */
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .contact-info{
+        /* khoảng cách giữa các dòng chicago, phone và email */
+        line-height: 2.0;
+    }
+
+    /* nút SEND trên ip to ra, vì trả về mặc định rồi nhưng mặc định ko đạt font-size */
+    .submit-btn-iphone{
+        font-size: 16px;
+    }
+
+    #footer .social-list{
+        /* bự các icon cuối cùng */
+        font-size: 48px;
+    }
+
+    #footer .social-list a{
+        /* khoảng cách giữa các icon rộng ra */
+        margin: 0 8px;
+    }
+
+    #footer .copyright{
+        /* font-size dưới các icon */
+        font-size: 20px;
+    }
+
+    #footer .copyright a{
+        /* cách dòng cuối xuống dưới icon 1 tí */
+        padding: 12px 0;
+        display: inline-block;
+
+    }
+}
+
+/* MOBILE */
+/* 739px = 46.1875em */
+@media (max-width: 46.1875em){
+    .s-col-full,
+    .s-full-width{
+        width: 100% !important;
+    }
+
+    .s-col-full{
+        width: 100%;
+    }
+
+    .s-mt-8{
+        margin-top: 8px;
+    }
+
+    #header{
+        /* ẩn */
+        overflow: hidden;
+    }
+
+    #header .search-btn{
+        display: none;
+    }
+
+    #header .mobile-menu-btn{
+        /* hiện dấu menu bên mobile */
+        display: block;
+    }
+
+    /* bấm cái nút band, tour... dài hơn, bấm ko trúng chữ vẫn được, 
+    tuy nhiên icon menu sẽ bị văng ra */
+    #nav {
+        display: block;
+    }
+
+    /* chỉnh menu chính */
+    #nav li a{
+        padding: 1px 24px;
+    }
+
+    /* #nav li:hover{
+        background-color: #ccc;
+    } */
+
+    #nav > li{
+        display: block;
+    }
+
+    /* con của more */
+    #nav .subnav{
+        /* bỏ đi absolute mặc định bên pc để hiện con của more */
+        position: initial;
+
+        background-color: #333;
+    }
+
+    /* từng con của more */
+    #nav .subnav a{
+        color: #fff;
+        /* rộng ra và thụt vô */
+        padding: 5px 41px;
+    }
+
+    /* chỉ vào thẻ đứa con đầu tiên (là nút Home), để nó chỉ bấm được khi bấm vào 
+    chữ Home chứ không phải bấm phía ngoài như các nút band, tour,... */
+    #nav > li:first-child{
+        display: inline-block;
+    }
+
+    /* sửa kích mỗi ảnh trên mỗi cột (100% là 1 ảnh 1 cột) để 
+    những cái khác không bị lỗi */
+    /* ta bỏ để sử dụng cách s-col-full */
+
+    /* #content .member-item-mobile{
+        margin-top: 30px;
+        width: 100%;
+    } */
+
+    /* chỉnh ảnh to lên */
+    #content .member-img{
+        width: 60%;
+    }
+
+    /*  nếu ko dùng thêm mt-16 vào class và trừ đi 16px ở .contact-content thì
+    ta có thể dùng cách này: */
+    .contact-form{
+        margin-top: 32px;
+    }
+
+    #slider .text-content{
+        /* ẩn chữ trên ảnh slider */
+        display: none;
+    }
+}
