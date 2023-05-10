@@ -129,7 +129,7 @@ html{
 
 #header {
     height: 46px;
-    background-color: #000;
+    background-color: #999;
     /* giữ cho thanh đen đầu trang ko bị kéo đi khi lướt web */
     /* khi có thẻ pos này thì tính chất kế thừa của thẻ block ko còn (nav), 
     và chiều rộng của thanh ngang chỉ còn bằng vs chiều rộng content của nó */
